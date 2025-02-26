@@ -11,6 +11,8 @@ Move the downloaded dataset (it is in the form of release-raw) to your repositor
 Run train.py to train/evaluate the model 
 
 
+##TO DO 
+parse args
 
 
 
