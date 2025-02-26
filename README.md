@@ -7,7 +7,7 @@ I worked with the raw images from this  [https://www.kaggle.com/datasets/deathtr
 ## Clone this repo 
 Move the downloaded dataset (it is in the form of release-raw) to your repository 
 
-###
+### Train/Test the model 
 Run train.py to train/evaluate the model 
 
 
