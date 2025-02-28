@@ -38,6 +38,7 @@ This project utilizes the "EYEPACS-AIROGS-Light" dataset, available on Kaggle: [
     │       └── NRG/
     │           └── ... (NRG images)
     ├── train.py
+    ├── requirements.txt
     ├── ... (other files)
     ```
 
@@ -46,7 +47,14 @@ This project utilizes the "EYEPACS-AIROGS-Light" dataset, available on Kaggle: [
 1.  **Open a Terminal:**
     * Open a terminal or command prompt and navigate to the root directory of the cloned repository.
 
-2.  **Run Training:**
+2.  **Install Dependencies:**
+    * Before running the training script, ensure you have installed the required Python packages. Use the provided `requirements.txt` file to install them by running:
+
+        ```bash
+        pip install -r requirements.txt
+        ```
+
+3.  **Run Training:**
 
     * **Default Parameters:**
         To train the model with default parameters, execute the following command:
@@ -61,5 +69,3 @@ This project utilizes the "EYEPACS-AIROGS-Light" dataset, available on Kaggle: [
         ```bash
         python3 train.py --use_hyperparam_search
         ```
-
-    
