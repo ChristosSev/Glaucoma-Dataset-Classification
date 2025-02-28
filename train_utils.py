@@ -63,7 +63,7 @@ def hyperparameter_search(data_dir):
     """Perform grid search over hyperparameters."""
     learning_rates = [0.001, 0.01, 0.0001]
     batch_sizes = [16, 32, 64]
-    epochs = [1, 5]
+    epochs = [10, 15, 20]
     optimizers = ['adam', 'sgd']
     weight_decays = [0, 0.0001, 0.001]
 
