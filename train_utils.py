@@ -59,11 +59,11 @@ def train_and_evaluate(data_dir, batch_size, num_epochs, learning_rate, optimize
 
 
 
-def hyperparameter_search(data_dir):
+def hyperparameter_search(data_dir, hp_epochs=[10, 15, 20], use_augmentation=False):
     """Perform grid search over hyperparameters."""
     learning_rates = [0.001, 0.01, 0.0001]
     batch_sizes = [16, 32, 64]
-    epochs = [10, 15, 20]
+    epochs = hp_epochs  # Use the parameter instead of hardcoded values
     optimizers = ['adam', 'sgd']
     weight_decays = [0, 0.0001, 0.001]
 
@@ -73,7 +73,7 @@ def hyperparameter_search(data_dir):
     for lr, batch_size, epoch, optimizer, wd in itertools.product(learning_rates, batch_sizes, epochs, optimizers,
                                                                   weight_decays):
         test_loss, test_acc, precision, recall, f1_score, per_class_metrics = train_and_evaluate(
-            data_dir, batch_size, epoch, lr, optimizer, wd
+            data_dir, batch_size, epoch, lr, optimizer, wd, use_augmentation=use_augmentation
         )
 
         if test_acc > best_acc:
