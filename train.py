@@ -17,7 +17,7 @@ from evaluation import evaluate_model
 from Gradcam import grad_cam_explanation
 import sys
 
-# Remove the Jupyter arguments that may cause the issue
+
 sys.argv = sys.argv[:1]  # Only keep the first element
 
 
