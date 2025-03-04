@@ -33,7 +33,9 @@ class GradCam:
         self.model.zero_grad()
 
         # Backward pass to get gradients for the target class
-        class_score = output[0, target_class]
+        #class_score = output[0, target_class]
+
+        class_score = output[0, 0]
         class_score.backward()
 
         # Get the gradients and feature maps
@@ -74,9 +76,9 @@ class GradCam:
 def grad_cam_explanation(model, image, target_class, device):
     # Ensure the image is on the same device as the model
     image = image.to(device)  # Move the image to GPU or CPU based on the device
-
+    print("EXplaning..")
     # Choose the last convolutional layer (for ResNet, it's 'layer4')
-    target_layer = model.layer4[1].conv2  # Use the second convolution layer in the last block
+    target_layer = model.features[8]  # Use the second convolution layer in the last block
     grad_cam = GradCam(model, target_layer)
 
     # Generate Grad-CAM heatmap
