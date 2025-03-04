@@ -3,10 +3,10 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.models as models
 import itertools
-from utils.training import train_model
-from utils.evaluation import evaluate_model
-from utils.visualization import plot_training_history, plot_confusion_matrix
-from utils.evaluation import evaluate_model
+from training import train_model
+from evaluation import evaluate_model
+from visualization import plot_training_history, plot_confusion_matrix
+from evaluation import evaluate_model
 from metrics_int import analyze_metrics
 
 # Import data loader
